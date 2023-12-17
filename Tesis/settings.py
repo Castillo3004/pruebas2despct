@@ -32,11 +32,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # DEBUG = True
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com']
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+# RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+# if RENDER_EXTERNAL_HOSTNAME:
+#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -91,7 +91,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default='postgres://pruebadjango_user:KYjmWy0Uqut69ugw3vU7WhsMx55DxcPd@dpg-clvjmm6g1b2c73chchpg-a.oregon-postgres.render.com/pruebadjango',
         conn_max_age=600
     )
 }
